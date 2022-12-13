@@ -2,17 +2,33 @@
 <body>
     <input id="price">Price
     <br><br>
-    <input id="discount">%
+
+    <input id="discount">
+        <label for = "discount percentage"> Select Discount %
+
+
     <br><br>
     <button onclick="getPrice()">
 Get total
 </button>
     <br><br>
-    <input readonly id="total">
+    <input readonly id="Discount amount">Discount amount
+    <br><br>
+    <input readonly id="total"> Amount spent
     <script>
+
+//Create a function that is going to calculate if one is eligible
+// for discount based on the amount, they have spent shopping, 
+//amount spent is going to be entered as the parameter then the 
+//function will determine how much percentage discount, 
+//they are eligible for. 
+//Amount spent 
+
         getPrice = function() {
             var numVal1 = Number(document.getElementById("price").value);
             var numVal2 = Number(document.getElementById("discount").value) / 100;
+            //var DiscountValue = (numVal1 - numVal2)
+            //document.getElementById("Discount").value =DiscountValue;
             var totalValue = numVal1 - (numVal1 * numVal2)
             document.getElementById("total").value = totalValue.toFixed(2);
         }
